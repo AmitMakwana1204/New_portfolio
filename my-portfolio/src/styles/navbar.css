@@ -1,0 +1,85 @@
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 50px;
+
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(12px);
+
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+/* LOGO */
+.logo{
+  font-size:22px;
+  font-weight:600;
+  color:#4ea1ff;
+  letter-spacing:1px;
+}
+
+/* NAV LINKS */
+nav ul{
+  display:flex;
+  gap:30px;
+}
+
+/* 🔥 FIX: LI STYLE */
+nav ul li{
+  list-style:none;
+  cursor:pointer;
+  color:#cbd5e1;
+  font-size:14px;
+  position:relative;
+  transition:0.3s;
+}
+
+/* UNDERLINE ANIMATION */
+nav ul li::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0%;
+  height:2px;
+  background:linear-gradient(to right,#4ea1ff,#a855f7);
+  transition:0.3s;
+}
+
+/* HOVER */
+nav ul li:hover::after{
+  width:100%;
+}
+
+nav ul li:hover{
+  color:#4ea1ff;
+}
+
+/* ACTIVE */
+nav ul li.active{
+  color:#4ea1ff;
+}
+
+/* SCROLL EFFECT */
+nav.scrolled{
+  background:rgba(0,0,0,0.8);
+  box-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* 📱 MOBILE */
+@media(max-width:768px){
+
+  nav{
+    padding:15px 20px;
+  }
+
+  nav ul{
+    display:none;
+  }
+}

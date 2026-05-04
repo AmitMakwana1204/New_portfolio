@@ -1,0 +1,151 @@
+
+/* SECTION TITLE */
+.education h2{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+/* TIMELINE WRAPPER */
+.education-timeline{
+  position:relative;
+  max-width:800px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+
+/* 🔵 CENTER LINE */
+.education-timeline::before{
+  content:"";
+  position:absolute;
+  left:20px;
+  top:0;
+  width:2px;
+  height:100%;
+  background:rgba(78,161,255,0.3);
+}
+
+/* CARD */
+.education-card{
+  position:relative;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  padding:20px 25px;
+  border-radius:12px;
+  margin-left:40px;
+
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+/* DOT */
+.education-card::before{
+  content:"";
+  position:absolute;
+  left:-30px;
+  top:25px;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#4ea1ff;
+  box-shadow:0 0 10px #4ea1ff;
+}
+
+/* HOVER EFFECT */
+.education-card:hover{
+  transform:translateX(10px) scale(1.02);
+  box-shadow:0 0 20px rgba(78,161,255,0.3);
+  border:1px solid #4ea1ff;
+}
+
+/* TITLE */
+.education-card h3{
+  margin-bottom:5px;
+}
+
+/* PLACE */
+.edu-place{
+  display:block;
+  color:#4ea1ff;
+  font-size:14px;
+}
+
+/* YEAR */
+.edu-year{
+  display:block;
+  color:#94a3b8;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+/* DESCRIPTION */
+.education-card p{
+  color:#cbd5e1;
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* 📱 RESPONSIVE */
+@media(max-width:768px){
+
+  .education-timeline::before{
+    left:10px;
+  }
+
+  .education-card{
+    margin-left:30px;
+  }
+
+  .education-card::before{
+    left:-22px;
+  }
+}
+
+
+/* CARD LAYOUT (ADD THIS) */
+.education-card{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+
+  position:relative;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  padding:20px 25px;
+  border-radius:12px;
+  margin-left:40px;
+
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+/* ICON */
+.edu-icon{
+  min-width:50px;
+}
+
+.edu-icon img{
+  width:45px;
+  height:45px;
+  object-fit:contain;
+  filter:brightness(1.2);
+}
+
+/* CONTENT WRAP */
+.edu-content{
+  flex:1;
+}
+
+/* FIX DOT POSITION (important) */
+.education-card::before{
+  left:-30px;
+  top:30px;
+}
+
+/* HOVER IMPROVE */
+.education-card:hover{
+  transform:translateX(12px) scale(1.02);
+  box-shadow:0 0 25px rgba(78,161,255,0.35);
+  border:1px solid #4ea1ff;
+}

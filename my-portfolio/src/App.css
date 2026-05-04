@@ -1,0 +1,29 @@
+
+/* 🔥 MAIN APP WRAPPER */
+#root{
+  max-width:1400px;
+  margin:auto;
+}
+
+/* OPTIONAL GLOBAL UTILITIES */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* SCROLLBAR (optional premium look) */
+::-webkit-scrollbar{
+  width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#4ea1ff;
+  border-radius:10px;
+}
+
+/* SELECTION COLOR */
+::selection{
+  background:#4ea1ff;
+  color:black;
+}

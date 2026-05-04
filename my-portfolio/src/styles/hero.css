@@ -1,0 +1,294 @@
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:100vh;
+  padding:60px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* 🌌 BACKGROUND GLOW LAYER */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle,#1e90ff,transparent);
+  filter:blur(120px);
+  opacity:0.15;
+  top:40%;
+  left:60%;
+  transform:translate(-50%,-50%);
+  z-index:0;
+}
+
+/* 🌍 PLANET (SOFT) */
+.planet{
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle,#4ea1ff,transparent);
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:0.2;
+  top:60%;
+  left:75%;
+  transform:translate(-50%,-50%);
+  z-index:0;
+}
+
+/* LEFT */
+.left{
+  max-width:50%;
+  z-index:2;
+}
+
+.left h1{
+  font-size:56px;
+  line-height:1.2;
+  font-weight:600;
+}
+
+/* GRADIENT TEXT */
+.left span{
+  background:linear-gradient(90deg,#4ea1ff,#a855f7,#4ea1ff);
+  background-size:200%;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:shine 4s linear infinite;
+}
+
+/* TEXT ANIMATION */
+@keyframes shine{
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+
+.role{
+  color:#94a3b8;
+  margin-top:12px;
+  font-size:18px;
+}
+
+.intro{
+  margin-top:20px;
+  color:#cbd5e1;
+  line-height:1.7;
+  font-size:15px;
+}
+
+/* BUTTONS */
+.buttons{
+  margin-top:25px;
+}
+
+/* PRIMARY BUTTON */
+.hire{
+  background:linear-gradient(to right,#4ea1ff,#a855f7);
+  padding:12px 26px;
+  border-radius:30px;
+  border:none;
+  color:white;
+  cursor:pointer;
+  font-weight:500;
+  transition:0.3s;
+  box-shadow:0 0 20px rgba(78,161,255,0.4);
+}
+
+.hire:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 0 35px rgba(168,85,247,0.6);
+}
+
+/* SECOND BUTTON */
+.work{
+  margin-left:12px;
+  border:1px solid #4ea1ff;
+  padding:12px 26px;
+  border-radius:30px;
+  color:#4ea1ff;
+  cursor:pointer;
+  background:transparent;
+  transition:0.3s;
+}
+
+.work:hover{
+  background:#4ea1ff;
+  color:white;
+  box-shadow:0 0 20px #4ea1ff;
+}
+
+/* IMAGE WRAPPER */
+.image-wrapper{
+  position:relative;
+  z-index:2;
+}
+
+/* IMAGE */
+.image-wrapper img{
+  width:340px;
+  border-radius:50%;
+  object-fit:cover;
+
+  /* EDGE LIGHT EFFECT */
+  box-shadow:
+    0 0 25px rgba(78,161,255,0.4),
+    0 0 60px rgba(168,85,247,0.2);
+
+  transition:0.4s;
+}
+
+/* HOVER GLOW */
+.image-wrapper img:hover{
+  transform:scale(1.08);
+  box-shadow:
+    0 0 40px rgba(78,161,255,0.7),
+    0 0 80px rgba(168,85,247,0.4);
+}
+
+/* 📱 RESPONSIVE */
+@media(max-width:900px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:40px 20px;
+  }
+
+  .left{
+    max-width:100%;
+  }
+
+  .image-wrapper img{
+    width:260px;
+    margin-top:30px;
+  }
+
+  .planet{
+    left:50%;
+  }
+}
+
+
+/* 🔥 SKILLS TAGS (HERO SPECIAL STYLE) */
+.skills-tags{
+  margin-top:25px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  z-index:2;
+}
+
+/* TAG DESIGN */
+.skills-tags span{
+  padding:8px 16px;
+  border-radius:25px;
+  font-size:13px;
+
+  /* glass + gradient mix */
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(8px);
+
+  color:#cbd5e1;
+  transition:all 0.3s ease;
+}
+
+/* 🔥 HOVER EFFECT */
+.skills-tags span:hover{
+  background:linear-gradient(135deg,#4ea1ff,#a855f7);
+  color:white;
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:
+    0 0 15px rgba(78,161,255,0.5),
+    0 0 25px rgba(168,85,247,0.3);
+}
+
+/* ✨ FLOAT ANIMATION (subtle) */
+.skills-tags span:nth-child(odd){
+  animation:floatTag 3s ease-in-out infinite;
+}
+
+.skills-tags span:nth-child(even){
+  animation:floatTag 4s ease-in-out infinite;
+}
+
+@keyframes floatTag{
+  0%{ transform:translateY(0px); }
+  50%{ transform:translateY(-4px); }
+  100%{ transform:translateY(0px); }
+}
+
+/* 📱 RESPONSIVE FIX */
+@media(max-width:900px){
+  .skills-tags{
+    justify-content:center;
+  }
+}
+
+
+/* 🔗 SOCIAL */
+.social{
+  margin-top:25px;
+  display:flex;
+  gap:15px;
+  z-index:2;
+}
+
+/* ICON STYLE */
+.social a{
+  width:45px;
+  height:45px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+  font-size:18px;
+
+  /* glass look */
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+
+  color:#cbd5e1;
+  text-decoration:none;
+
+  transition:all 0.3s ease;
+}
+
+/* 🔥 HOVER EFFECT */
+.social a:hover{
+  background:linear-gradient(135deg,#4ea1ff,#a855f7);
+  color:white;
+
+  transform:translateY(-5px) scale(1.1);
+
+  box-shadow:
+    0 0 15px rgba(78,161,255,0.5),
+    0 0 25px rgba(168,85,247,0.4);
+}
+
+/* ✨ FLOAT ANIMATION */
+.social a:nth-child(1){
+  animation:floatIcon 3s ease-in-out infinite;
+}
+
+.social a:nth-child(2){
+  animation:floatIcon 4s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+  0%{ transform:translateY(0px); }
+  50%{ transform:translateY(-4px); }
+  100%{ transform:translateY(0px); }
+}
+
+/* 📱 MOBILE */
+@media(max-width:900px){
+  .social{
+    justify-content:center;
+  }
+}
