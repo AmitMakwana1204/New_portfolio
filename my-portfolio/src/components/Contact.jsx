@@ -1,12 +1,19 @@
 import { useEffect, useRef } from "react"
+import emailjs from "@emailjs/browser"
 import "../styles/contact.css"
 
 function Contact() {
 
   const nameRef = useRef(null)
+  const formRef = useRef()
 
-  // 🔥 auto focus when section visible
+  // ✅ EmailJS init + auto focus
   useEffect(() => {
+
+    // 🔥 init emailjs
+    emailjs.init("KaNKGnphfZz85Ar2P")
+
+    // 🔥 focus logic
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -20,11 +27,26 @@ function Contact() {
     if (section) observer.observe(section)
 
     return () => observer.disconnect()
+
   }, [])
 
+  // ✅ form submit
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert("Message sent successfully 🚀")
+
+    emailjs.sendForm(
+      "service_rfuik0l",        // ✅ correct service
+      "template_4emzpcz",
+      formRef.current
+    )
+    .then(() => {
+      alert("✅ Message sent successfully!")
+      formRef.current.reset()
+    })
+    .catch((error) => {
+      console.log(error)
+      alert("❌ Failed to send message")
+    })
   }
 
   return (
@@ -63,22 +85,29 @@ function Contact() {
         </div>
 
         {/* RIGHT FORM */}
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form 
+          ref={formRef}
+          className="contact-form" 
+          onSubmit={handleSubmit}
+        >
 
           <input
             ref={nameRef}
+            name="user_name"
             type="text"
             placeholder="Your Name"
             required
           />
 
           <input
+            name="user_email"
             type="email"
             placeholder="Your Email"
             required
           />
 
           <textarea
+            name="message"
             placeholder="Your Message"
             rows="5"
             required
