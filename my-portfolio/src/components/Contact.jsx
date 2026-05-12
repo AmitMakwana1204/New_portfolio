@@ -74,7 +74,7 @@ function Contact() {
 
           <div className="info-box">
             <h4>Location</h4>
-            <p>Gujarat, India</p>
+            <p>Khambhat,Gujarat, India</p>
           </div>
 
           <div className="info-box">
