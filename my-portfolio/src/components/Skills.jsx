@@ -3,15 +3,17 @@ import "../styles/skill.css"
 
 import {
   FaReact,
-  FaPython,
+  FaNodeJs,
   FaJs,
   FaGitAlt,
   FaHtml5,
-  FaCss3Alt
+  FaCss3Alt,
+  FaGithub
 } from "react-icons/fa"
 
 import {
-  SiDjango,
+  SiExpress,
+  SiMongodb,
   SiMysql,
   SiVite
 } from "react-icons/si"
@@ -31,34 +33,42 @@ function Skill() {
     {
       category: "Backend",
       items: [
-        { name: "Python", icon: <FaPython /> },
-        { name: "Django", icon: <SiDjango /> }
+        { name: "Node.js", icon: <FaNodeJs /> },
+        { name: "Express.js", icon: <SiExpress /> }
       ]
     },
     {
       category: "Database",
       items: [
+        { name: "MongoDB", icon: <SiMongodb /> },
         { name: "MySQL", icon: <SiMysql /> }
       ]
     },
     {
       category: "Tools",
       items: [
-        { name: "Git", icon: <FaGitAlt /> }
+        { name: "Git", icon: <FaGitAlt /> },
+        { name: "GitHub", icon: <FaGithub /> },
+        { name: "Vite", icon: <SiVite /> }
       ]
     }
   ]
 
   // 🔥 Scroll animation
   useEffect(() => {
+
     const cards = document.querySelectorAll(".skill-box")
 
     const observer = new IntersectionObserver((entries) => {
+
       entries.forEach(entry => {
+
         if (entry.isIntersecting) {
           entry.target.classList.add("show")
         }
+
       })
+
     }, { threshold: 0.2 })
 
     cards.forEach(card => {
@@ -67,31 +77,47 @@ function Skill() {
     })
 
     return () => observer.disconnect()
+
   }, [])
 
   return (
+
     <section className="skills section" id="skills">
 
       <h2>Skills</h2>
 
       {skills.map((group, i) => (
+
         <div key={i} className="skills-group">
 
-          <h3 className="category">{group.category}</h3>
+          <h3 className="category">
+            {group.category}
+          </h3>
 
           <div className="skills-grid">
+
             {group.items.map((skill, index) => (
+
               <div className="skill-box" key={index}>
-                <div className="icon">{skill.icon}</div>
+
+                <div className="icon">
+                  {skill.icon}
+                </div>
+
                 <p>{skill.name}</p>
+
               </div>
+
             ))}
+
           </div>
 
         </div>
+
       ))}
 
     </section>
+
   )
 }
 

@@ -1,41 +1,58 @@
 import "../styles/about.css"
 
 function About() {
+
   return (
+
     <section className="about section" id="about">
 
       <h2>About Me</h2>
 
       <div className="about-container">
 
-        {/* LEFT SIDE */}
+        {/* ================= LEFT SIDE ================= */}
         <div className="about-left">
+
           <h3>
-            Passionate Full Stack Developer building real-world solutions 🚀
+            Passionate Full Stack Developer building modern web applications 🚀
           </h3>
 
           <p>
-            I am a BCA student (2026) with hands-on experience in building modern,
-            scalable web applications using React, Django, and MySQL.
+            I am currently pursuing Bachelor of Computer Application (BCA)
+            at Sardar Patel University with an expected graduation in 2026.
           </p>
 
           <p>
-            I have completed a full stack development internship and worked on
-            projects like an e-commerce platform, portfolio website, and an
-            online code editor.
+            I have hands-on experience in building responsive and scalable
+            web applications using React.js, Node.js, Express.js,
+            MongoDB, and MySQL.
+          </p>
+
+          <p>
+            I successfully completed a Full Stack Development internship
+            at Information Technology Centre, where I gained practical
+            experience working on real-world development projects.
           </p>
 
           <p className="highlight">
-            I focus on clean UI, performance, and solving real-world problems.
+            I focus on clean UI design, responsive layouts,
+            performance optimization, and continuous learning.
           </p>
 
-          {/* BUTTON */}
-          <a href="/resume.pdf" target="_blank" rel="noreferrer">
-            <button className="resume-btn">Download Resume</button>
+          {/* ================= BUTTON ================= */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="resume-btn">
+              Download Resume
+            </button>
           </a>
+
         </div>
 
-        {/* RIGHT SIDE (STATS / HIGHLIGHTS) */}
+        {/* ================= RIGHT SIDE ================= */}
         <div className="about-right">
 
           <div className="about-box">
@@ -49,7 +66,7 @@ function About() {
           </div>
 
           <div className="about-box">
-            <h3>6+</h3>
+            <h3>8+</h3>
             <p>Technologies</p>
           </div>
 
@@ -63,6 +80,7 @@ function About() {
       </div>
 
     </section>
+
   )
 }
 

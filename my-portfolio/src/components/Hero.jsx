@@ -62,21 +62,22 @@ function Hero() {
 
         {/* Role */}
         <h2 className="role">
-          Building Modern & Responsive Web Applications
+          Building Modern Responsive Full Stack Web Applications
         </h2>
 
         {/* Intro */}
         <p className="intro">
           Passionate Full Stack Developer with hands-on experience
-          in building scalable and responsive web applications
-          using modern frontend and backend technologies.
+          in building responsive and scalable web applications
+          using React.js, Node.js, Express.js, and MongoDB.
         </p>
 
         {/* Extra Text */}
         <p className="extra">
-          Currently pursuing BCA (2026) and actively seeking
-          internship opportunities to enhance my development
-          skills and work on real-world projects.
+          Currently pursuing Bachelor of Computer Application (BCA)
+          at Sardar Patel University (2026) and actively seeking
+          internship opportunities to enhance my development skills
+          and contribute to real-world projects.
         </p>
 
         {/* ================= SKILLS ================= */}
@@ -84,19 +85,27 @@ function Hero() {
 
           <span>React.js</span>
 
-          <span>Node.js</span>
+         <span>Node.js</span>
 
-          <span>Express.js</span>
+         <span>Express.js</span>
 
-          <span>MongoDB</span>
+         <span>MongoDB</span>
 
-          <span>JavaScript</span>
+         <span>JavaScript</span>
 
-          <span>MySQL</span>
+         <span>MySQL</span>
 
-          <span>Git</span>
+         <span>Git</span>
 
-          <span>GitHub</span>
+         <span>GitHub</span>
+
+         <span>HTML</span>
+
+         <span>CSS</span>
+
+         <span>REST API</span>
+
+         <span>Responsive Design</span>
 
         </div>
 
