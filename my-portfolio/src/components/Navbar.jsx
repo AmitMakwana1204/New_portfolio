@@ -1,30 +1,61 @@
-import "../styles/navbar.css"
+import { useState } from "react";
+import "../styles/navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = [
+    { label: "Home", id: "home" },
+    { label: "About", id: "about" },
+    { label: "Skills", id: "skills" },
+    { label: "Experience", id: "experience" },
+    { label: "Education", id: "education" },
+    { label: "Projects", id: "projects" },
+    { label: "Contact", id: "contact" },
+  ];
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id)
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setMenuOpen(false);
+  };
 
   return (
-    <nav>
+    <nav className="navbar">
+      <button
+        className="navbar-logo"
+        onClick={() => scrollToSection("home")}
+        aria-label="Go to Home"
+      >
+        Amit <span>Makwana</span>
+      </button>
 
-      <h2 className="logo">Amit</h2>
+      <button
+        className="navbar-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={menuOpen}
+      >
+        {menuOpen ? "✕" : "☰"}
+      </button>
 
-      <ul>
-        <li onClick={() => scrollToSection("home")}>Home</li>
-        <li onClick={() => scrollToSection("about")}>About</li>
-        <li onClick={() => scrollToSection("skills")}>Skills</li>
-        <li onClick={() => scrollToSection("education")}>Education</li>
-        <li onClick={() => scrollToSection("projects")}>Projects</li>
-        <li onClick={() => scrollToSection("contact")}>Contact</li>
+      <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
+        {navItems.map((item) => (
+          <li key={item.id}>
+            <button
+              type="button"
+              onClick={() => scrollToSection(item.id)}
+            >
+              {item.label}
+            </button>
+          </li>
+        ))}
       </ul>
-
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

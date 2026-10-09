@@ -15,7 +15,7 @@ import {
   SiExpress,
   SiMongodb,
   SiMysql,
-  SiVite
+  SiPostman
 } from "react-icons/si"
 
 function Skill() {
@@ -49,7 +49,7 @@ function Skill() {
       items: [
         { name: "Git", icon: <FaGitAlt /> },
         { name: "GitHub", icon: <FaGithub /> },
-        { name: "Vite", icon: <SiVite /> }
+        { name: "Postman", icon: <SiPostman /> }
       ]
     }
   ]

@@ -1,185 +1,132 @@
-import { useEffect } from "react"
-import me from "../assets/images/me.png"
-import { initStars } from "../utils/stars"
-import "../styles/hero.css"
+import { useEffect } from "react";
+import me from "../assets/images/me.png";
+import { initStars } from "../utils/stars";
+import "../styles/hero.css";
 
-// 🔥 SOCIAL ICONS
 import {
   FaLinkedin,
   FaGithub,
-  FaInstagram
-} from "react-icons/fa"
+  FaInstagram,
+} from "react-icons/fa";
 
 function Hero() {
-
   useEffect(() => {
-    initStars()
-  }, [])
+    initStars();
+  }, []);
 
-  // 🔥 Scroll To Contact
-  const goToContact = () => {
-
-    const section = document.getElementById("contact")
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth"
-      })
-    }
-  }
-
-  // 🔥 Scroll To Projects
-  const goToProjects = () => {
-
-    const section = document.getElementById("projects")
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth"
-      })
-    }
-  }
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   return (
-
     <section className="home hero" id="home">
-
-      {/* 🌍 Glow Background */}
       <div className="planet"></div>
 
-      {/* ================= LEFT CONTENT ================= */}
       <div className="left">
-
-        {/* Subtitle */}
         <p className="hero-subtitle">
           🚀 MERN Stack Developer
         </p>
 
-        {/* Main Heading */}
         <h1>
           Hi, I'm <span>Amit Makwana</span>
         </h1>
 
-        {/* Role */}
         <h2 className="role">
-          Building Modern Responsive Full Stack Web Applications
+          Building Modern & Responsive Full-Stack Web Applications
         </h2>
 
-        {/* Intro */}
         <p className="intro">
-          Passionate Full Stack Developer with hands-on experience
-          in building responsive and scalable web applications
-          using React.js, Node.js, Express.js, and MongoDB.
+          BCA graduate and Full Stack Developer passionate about
+          building responsive, user-friendly web applications using
+          React.js, Node.js, Express.js, and MongoDB.
         </p>
 
-        {/* Extra Text */}
         <p className="extra">
-          Currently pursuing Bachelor of Computer Application (BCA)
-          at Sardar Patel University (2026) and actively seeking
-          internship opportunities to enhance my development skills
-          and contribute to real-world projects.
+          I have practical web development experience through
+          internships and hands-on projects. My projects include
+          PizzaHub, a full-stack pizza delivery and inventory
+          management application with user authentication, order
+          management, and an admin dashboard. I enjoy solving
+          problems, developing REST APIs, and continuously improving
+          my technical skills.
         </p>
 
-        {/* ================= SKILLS ================= */}
         <div className="skills-tags">
-
           <span>React.js</span>
-
-         <span>Node.js</span>
-
-         <span>Express.js</span>
-
-         <span>MongoDB</span>
-
-         <span>JavaScript</span>
-
-         <span>MySQL</span>
-
-         <span>Git</span>
-
-         <span>GitHub</span>
-
-         <span>HTML</span>
-
-         <span>CSS</span>
-
-         <span>REST API</span>
-
-         <span>Responsive Design</span>
-
+          <span>JavaScript</span>
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>MongoDB</span>
+          <span>Mongoose</span>
+          <span>Vite</span>
+          <span>Tailwind CSS</span>
+          <span>REST APIs</span>
+          <span>JWT Authentication</span>
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>MySQL</span>
         </div>
 
-        {/* ================= BUTTONS ================= */}
         <div className="buttons">
-
-          {/* Contact Button */}
           <button
             className="hire"
-            onClick={goToContact}
+            onClick={() => scrollToSection("contact")}
           >
             Let's Connect
           </button>
 
-          {/* Projects Button */}
           <button
             className="work"
-            onClick={goToProjects}
+            onClick={() => scrollToSection("projects")}
           >
             Explore Projects
           </button>
-
         </div>
 
-        {/* ================= SOCIAL LINKS ================= */}
         <div className="social">
-
-          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/amit-makwana-aa255b407"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
           >
             <FaLinkedin />
           </a>
 
-          {/* GitHub */}
           <a
             href="https://github.com/AmitMakwana1204"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
           >
             <FaGithub />
           </a>
 
-          {/* Instagram */}
           <a
             href="https://www.instagram.com/makwana__amit__1204/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label="Instagram Profile"
           >
             <FaInstagram />
           </a>
-
         </div>
-
       </div>
 
-      {/* ================= RIGHT IMAGE ================= */}
       <div className="right">
-
         <div className="image-wrapper">
-
           <img
             src={me}
-            alt="Amit Makwana"
+            alt="Amit Makwana - MERN Stack Developer"
           />
-
         </div>
-
       </div>
-
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
