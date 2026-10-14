@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import me from "../assets/images/me.png";
+import song from "../assets/audio/introduction.mp4";
 import { initStars } from "../utils/stars";
 import "../styles/hero.css";
 
@@ -115,6 +116,16 @@ function Hero() {
             <FaInstagram />
           </a>
         </div>
+
+        {/* Song Player */}
+        <div className="song-player">
+          <span>My Introduction</span>
+
+          <audio autoPlay controls loop preload="auto">
+            <source src={song} type="audio/mp4" />
+            Your browser does not support audio playback.
+          </audio>
+        </div>        
       </div>
 
       <div className="right">

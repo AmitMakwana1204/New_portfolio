@@ -445,3 +445,43 @@
     transition: none;
   }
 }
+
+
+/* =========================
+   SONG PLAYER
+========================= */
+
+.hero .song-player {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 22px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero .song-player span {
+  color: #8cc5ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero .song-player audio {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: 45px;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .hero .song-player {
+    align-items: center;
+    margin: 22px auto 0;
+  }
+}
