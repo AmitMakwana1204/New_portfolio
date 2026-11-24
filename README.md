@@ -41,5 +41,3 @@ Clone the repository:
 ```bash
 git clone https://github.com/AmitMakwana1204/New_portfolio.git
 cd New_portfolio
-
-...........
